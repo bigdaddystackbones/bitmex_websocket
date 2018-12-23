@@ -26,13 +26,11 @@ def bitmex_websocket():
 
     result = ws.recv()
     print("Received '%s'" % result)
-
-    result = ws.recv()
-    msg = json.loads(result)
     
     #keeps websocket alive
     while True:
         msg = ws.recv()
+        msg = json.loads(result)
         print(msg)
     
 #---------------------------------------------------------------------------------
